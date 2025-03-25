@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
   <div class="container">
     <nav class="navbar bg-body-tertiary">
         <div class="container-fluid">
@@ -103,22 +104,25 @@
             <main class="container">
                 <h2>긍정확언 기록장</h2>
 
-                <form action="">
+                <form action="" method="post"  enctype="multipart/form-data">
+                  <table>
+                    {% csrf_token %}
+            
 
                     <div class="form-floating mb-3">
-                      <input type="nickname" class="form-control uniform-input" id="nickname">
+                      <input type="nickname"  name="nickname" class="form-control uniform-input" id="nickname">
                       <label for="name">이름을 입력해주세요</label>
                     </div>
 
-                    <!-- 날짜 선택 -->
+                    <!-- 날짜 선택
                     <div class="form-floating mb-3">
                         <input type="date" class="form-control uniform-input" id="date">
                         <label for="date">날짜를 선택해 주세요</label>
-                    </div>
+                    </div> -->
 
                     <!-- 감정 선택 -->
                     <div class="form-floating mb-3">
-                        <select class="form-control uniform-input" id="mood">
+                        <select class="form-control uniform-input" name="emotion" id="mood">
                             <option selected>👍</option>
                             <option selected>⭐</option>
                             <option selected>😍</option>
@@ -130,9 +134,10 @@
 
                     <!-- 긍정확언 입력 -->
                     <div class="form-floating mb-3">
-                        <input type="text" class="form-control uniform-input" id="text">
+                        <input type="text"  name="affirmation" class="form-control uniform-input" id="text">
                         <label for="text">오늘의 긍정확언을 입력하세요</label>
                     </div>
+                  </table>
 
                     <!-- 버튼 -->
                     <button type="submit" class="btn btn-light" id="save">확인</button>
