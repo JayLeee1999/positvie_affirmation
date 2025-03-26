@@ -28,7 +28,9 @@ def positive(request):
             print("에러 상태 : ", e)
     else:
         form = Form()
-    return render(request, 'positive.html')
+    article_list = Article.objects.all()
+    return render(request, 'positive.html', {'article_list': article_list})
+ 
 
 
 # def positive(request):
